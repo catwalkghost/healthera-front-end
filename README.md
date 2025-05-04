@@ -25,49 +25,6 @@ A React application for managing prescriptions, allowing users to view a list of
    npm test
    ```
 
-## Project Structure
-
-```
-healthera-front-end/
-├── src/
-│   ├── api/                  # API abstraction layer
-│   │   ├── prescriptions/    # Prescription API endpoints
-│   │   ├── config/           # API configuration
-│   │   ├── types/            # API type definitions
-│   │   └── utils/            # API utilities
-│   ├── assets/               # Static assets
-│   ├── components/           # Reusable UI components
-│   │   └── PrescriptionCard.tsx
-│   │   └── SearchInput.tsx
-│   ├── hooks/                # Custom React hooks
-│   │   ├── usePrescriptions.ts
-│   │   └── useRefillRequest.ts
-│   ├── pages/                # Page components
-│   │   ├── PrescriptionList.tsx
-│   │   └── PrescriptionDetails/      # Detail page with component extraction
-│   │       ├── index.tsx             # Main detail page component
-│   │       └── components/           # Detail page specific components
-│   │           ├── BackButton.tsx    
-│   │           ├── InfoItem.tsx
-│   │           ├── InfoSection.tsx
-│   │           └── PrescriptionHeader.tsx
-│   ├── types/                # TypeScript type definitions
-│   ├── utils/                # Utility functions
-│   │   └── dateFormat.ts     # Date formatting utilities
-│   ├── router.tsx            # Application routing
-│   └── App.tsx               # Main application component
-├── tests/                    # Test files
-│   ├── components/           # Component tests
-│   │   ├── PrescriptionCard.test.tsx
-│   │   └── PrescriptionDetails/      # Tests for PrescriptionDetails components
-│   │       ├── index.test.tsx        # Tests for the main details page
-│   │       └── components.test.tsx   # Tests for extracted components
-│   ├── hooks/                # Hook tests
-│   │   └── usePrescriptions.test.ts
-│   └── utils/                # Utility tests
-│       └── dateFormat.test.ts
-```
-
 ## Architecture Decisions
 
 ### 1. Component Structure
