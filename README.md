@@ -2,6 +2,24 @@
 
 A React application for managing prescriptions, allowing users to view a list of current prescriptions and request refills.
 
+## Screenshots
+
+### HD
+
+![Screenshot 2025-05-05 at 00 49 59](https://github.com/user-attachments/assets/59937661-dcd7-42ed-b099-6317ffca31dd)
+![Screenshot 2025-05-05 at 00 49 48](https://github.com/user-attachments/assets/290e394d-9db7-4072-99d3-aabed34ff180)
+![Screenshot 2025-05-05 at 00 49 37](https://github.com/user-attachments/assets/7cfbcf70-0256-437f-a574-6fcebbecf0c2)
+![Screenshot 2025-05-05 at 00 49 29](https://github.com/user-attachments/assets/f918f023-61bc-4a9b-bec3-5f1c285d67ef)
+
+### Tablet
+
+![Screenshot 2025-05-05 at 00 50 12](https://github.com/user-attachments/assets/e0e468c4-fc64-4c6b-9354-6e60af78ba0f)
+
+### Mobile
+
+![Screenshot 2025-05-05 at 00 50 30](https://github.com/user-attachments/assets/6c7553a3-8b7d-46a3-9e53-6c6ec8b11a00)
+
+
 ## Setup Instructions
 
 1. **Clone the repository**
