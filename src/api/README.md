@@ -2,26 +2,6 @@
 
 This directory contains the API abstraction layer that allows seamless toggling between mock data and real API implementations.
 
-## Directory Structure
-
-```
-api/
-├── config/                  # Configuration for API layer
-│   └── index.ts             # Control flags (USE_MOCKS)
-├── prescriptions/           # Prescription API module
-│   ├── types.ts             # API type definitions
-│   ├── index.ts             # Main entry point that selects the implementation
-│   ├── mockData.ts          # Mock data for prescriptions
-│   ├── prescriptions.mock.ts # Mock implementation
-│   └── prescriptions.real.ts # Real API implementation
-├── templates/               # Templates for new API modules
-│   └── newModule/           # Example template
-├── types/                   # Shared type definitions
-│   └── prescription.ts      # Prescription types
-└── utils/                   # Shared utilities
-    └── apiResolver.ts       # Generic resolver factory
-```
-
 ## How It Works
 
 1. **Configuration**: The `api/config/index.ts` file contains a `USE_MOCKS` flag which determines whether to use mock or real API implementations.
