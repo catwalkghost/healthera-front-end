@@ -1,1 +1,0 @@
-export type { Prescription, RefillResponse, PrescriptionsApi } from '../../types/Prescription';

@@ -9,5 +9,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./tests/setup.ts'],
+    deps: {
+      inline: ['@testing-library/react'],
+    },
+    css: false,
   }
 })

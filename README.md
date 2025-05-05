@@ -30,17 +30,22 @@ A React application for managing prescriptions, allowing users to view a list of
 
 2. **Install dependencies**
    ```
-   npm install
+   yarn install
    ```
 
 3. **Start the development server**
    ```
-   npm run dev
+   yarn dev
    ```
 
 4. **Run tests**
    ```
-   npm test
+   yarn test
+   ```
+
+5. **Build for production**
+   ```
+   yarn build
    ```
 
 ## Architecture Decisions
@@ -77,9 +82,9 @@ The mock API implementation allows for:
 - Testing the application without a backend dependency
 
 To adjust or remove simulated delays, modify the delay values in:
-- `src/api/prescriptions/mockApi.ts`
+- `src/Lib/API/prescriptions/mockApi.ts`
 
-The application can be configured to use real API endpoints by changing the `USE_MOCKS` flag in `src/utils/apiResolver.ts`.
+The application can be configured to use real API endpoints by changing the `USE_MOCKS` flag in `src/Lib/API/config/index.ts`.
 
 ### 4. State Management
 
@@ -110,6 +115,7 @@ The API layer is designed with an abstraction that allows seamless switching bet
 - Mock implementations for development and testing
 - Clear interfaces that both mock and real implementations must follow
 - Configuration flags to control which implementation to use
+- Located in `src/Lib/API` with utility functions in `src/Lib/utils`
 
 ### 7. Routing
 
@@ -133,7 +139,7 @@ The application prioritizes accessibility through:
 
 ## Testing Strategy
 
-The application includes comprehensive tests for different aspects of the codebase:
+The application includes tests for key components and utilities:
 
 ### 1. Component Testing
 
@@ -141,12 +147,10 @@ The application includes comprehensive tests for different aspects of the codeba
 - **PrescriptionDetails**: 
   - Tests for the main container component (loading states, error handling)
   - Tests for extracted sub-components (BackButton, InfoItem, InfoSection, PrescriptionHeader)
-- **SearchInput**: Tests for input handling and search functionality
 
 ### 2. Hook Testing
 
 - **usePrescriptions**: Tests for data fetching, filtering, and state management
-- **useRefillRequest**: Tests for refill request handling and state management
 
 ### 3. Utility Testing
 
@@ -154,10 +158,10 @@ The application includes comprehensive tests for different aspects of the codeba
 
 ### 4. Test Structure
 
-Tests are organized to mirror the application structure:
-- Component tests in `/tests/components/`
-- Hook tests in `/tests/hooks/`
-- Utility tests in `/tests/utils/`
+Tests are organized in a dedicated testing directory:
+- Component tests in `/tests/Components/`
+- Hook tests in `/tests/Hooks/`
+- Utility tests in `/tests/Utils/`
 
 ## Performance Considerations
 

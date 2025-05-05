@@ -1,9 +1,9 @@
-import { RouterProvider } from 'react-router-dom';
-import { ThemeProvider, CssBaseline, AppBar, Toolbar, Typography, Container, Box, Chip, Tooltip } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import { useEffect } from 'react';
-import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
-import router from './router';
-import { theme, loadInterFont } from './theme';
+import { router } from './router';
+import theme from './Lib/Theme/Theme';
+import { loadInterFont } from './Lib/Theme/Typography';
+import { RouterProvider } from 'react-router-dom';
 
 const App = () => {
   // Load the Inter font when the app initializes
@@ -15,85 +15,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       {/* CssBaseline normalizes styles across browsers */}
       <CssBaseline />
-      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
-        <AppBar 
-          position="fixed" 
-          color="primary" 
-          elevation={1} 
-          sx={{ 
-            zIndex: theme => theme.zIndex.drawer + 1,
-            boxShadow: '0 1px 4px rgba(0, 0, 0, 0.1)',
-            width: '100vw',
-            left: 0,
-            right: 0,
-            borderRadius: 0
-          }}
-        >
-          <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
-            <Toolbar disableGutters>
-              <LocalPharmacyIcon sx={{ mr: 1.5, fontSize: 26 }} />
-              <Typography
-                variant="h6"
-                component="h1"
-                fontWeight={600}
-                letterSpacing={0.5}
-                sx={{ flexGrow: 1 }}
-              >
-                Healthera Prescriptions
-              </Typography>
-              
-              {/* Mock API indicator */}
-              {import.meta.env.DEV && (
-                <Tooltip title="Mock API active" arrow>
-                  <Chip
-                    label="🧪 Mock API"
-                    size="small"
-                    variant="outlined"
-                    sx={{
-                      opacity: 0.6,
-                      color: 'white',
-                      borderColor: 'rgba(255, 255, 255, 0.5)',
-                      '& .MuiChip-label': {
-                        px: 1,
-                      }
-                    }}
-                  />
-                </Tooltip>
-              )}
-            </Toolbar>
-          </Container>
-        </AppBar>
-        
-        {/* Toolbar placeholder to prevent content from hiding under AppBar */}
-        <Toolbar />
-        
-        <Box 
-          component="main" 
-          sx={{ 
-            flexGrow: 1, 
-            width: '100%', 
-            pb: { xs: 2, sm: 3, md: 4 }
-          }}
-        >
-          <RouterProvider router={router} />
-        </Box>
-        
-        <Box
-          component="footer"
-          sx={{
-            py: 2,
-            px: 2,
-            mt: 'auto',
-            backgroundColor: theme => theme.palette.grey[100]
-          }}
-        >
-          <Container maxWidth="lg">
-            <Typography variant="body2" color="text.secondary" align="center">
-              Made with 💙 in {new Date().getFullYear()}
-            </Typography>
-          </Container>
-        </Box>
-      </Box>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 };
